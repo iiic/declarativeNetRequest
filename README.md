@@ -113,6 +113,26 @@ The module itself sends nothing off the device (`data_collection_permissions`: `
 
 Load the extension from `about:debugging#/runtime/this-firefox` → "Load Temporary Add-on…" → `manifest.json`.
 
+Requires Node.js 22 or newer. The project has no dependencies; `npm install` only turns on the git hook.
+
+```sh
+npm install   # once: git then runs the tests before each commit (.githooks/pre-commit)
+npm test      # the tests in tests/ (node:test)
+```
+
+The tests also run on GitHub (`.github/workflows/test.yml`) and before `npm publish`.
+
+## Release
+
+The version is in `package.json` and `manifest.json` and the tests check that both are the same. Change it with
+`npm version`, which updates both, commits and tags:
+
+```sh
+npm version patch   # or minor, major, X.Y.Z — Firefox accepts numbers only, no "-beta.1"
+git push --follow-tags
+npm publish
+```
+
 ## License
 
 [CC BY-SA 4.0](LICENSE)

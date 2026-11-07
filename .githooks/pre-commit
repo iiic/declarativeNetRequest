@@ -1,0 +1,4 @@
+#!/bin/sh
+# Runs the tests before each commit. Git uses this directory once `npm install` has run (see scripts/install-hooks.mjs).
+# Skip it once with `git commit --no-verify`.
+npm test

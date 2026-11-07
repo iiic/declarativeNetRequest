@@ -1,0 +1,51 @@
+{
+	"name": "declarativenetrequest",
+	"version": "1.0.0",
+	"description": "Firefox extension that modifies HTTP headers and GET parameters, blocks requests and redirects them to HTTPS by your own rules.",
+	"keywords": [
+		"firefox",
+		"webextension",
+		"browser-extension",
+		"declarativeNetRequest",
+		"http-headers",
+		"privacy"
+	],
+	"homepage": "https://iiic.dev/#declarativeNetRequest",
+	"bugs": {
+		"url": "https://github.com/iiic/declarativeNetRequest/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/iiic/declarativeNetRequest.git"
+	},
+	"license": "CC-BY-SA-4.0",
+	"author": "iiic (https://iiic.dev)",
+	"type": "module",
+	"files": [
+		"manifest.json",
+		"/*.html",
+		"/*.js",
+		"/*.mjs",
+		"/*.d.ts",
+		"default-settings.json",
+		"modules.json",
+		"service-provider.json",
+		"icon.png",
+		"_locales/",
+		"content-scripts/",
+		"css/",
+		"icons/",
+		"img/",
+		"modules/",
+		"sandbox-modules/"
+	],
+	"scripts": {
+		"test": "node --test tests/*.test.mjs",
+		"prepare": "node scripts/install-hooks.mjs",
+		"version": "node scripts/sync-version.mjs && git add manifest.json",
+		"prepublishOnly": "npm test"
+	},
+	"engines": {
+		"node": ">=22"
+	}
+}
