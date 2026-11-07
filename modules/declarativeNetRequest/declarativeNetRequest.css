@@ -1,0 +1,33 @@
+/* Look of the declarativeNetRequest module — the core attaches the file to the <head> of every
+   surface on which the element is rendered (see STYLES in module.mjs). The styles apply to the whole
+   document, so everything is nested under the element's tag. Colors from the appearance variables
+   (css/theme-*.css), so they fit both the light and the dark look. The overview of the rules for the
+   page and the editor of the rules have their own look in the package of declarativeNetRequestSandbox. */
+
+extension-declarative-net-request {
+
+	.hint {
+		margin: 4px 0;
+		font-size: 0.9em;
+		color: var(--color-text-muted);
+	}
+
+	.problem {
+		margin: 4px 0;
+		font-size: 0.9em;
+		color: var(--color-error);
+	}
+
+	.buttons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+	}
+
+	/* Small buttons — overrides the large blue buttons from mvp.css. */
+	button {
+		margin: 4px 0 0;
+		padding: 2px 8px;
+		font-size: 0.9em;
+	}
+}

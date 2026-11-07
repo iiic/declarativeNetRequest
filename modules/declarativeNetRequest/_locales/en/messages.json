@@ -1,0 +1,179 @@
+{
+	"declarativeNetRequest_description": {
+		"message": "Modifies HTTP headers and GET parameters in the address, blocks requests and redirects them from HTTP to HTTPS in the communication with pages (declarativeNetRequest): removes and sets headers sent to the server and received from it, and the parameters after “?” in the request address, or blocks the request, for the page itself and for the files it loads (scripts, styles, images, …). Rules can be assigned to domains, specific addresses or the bookmarks in a bookmark folder, and selected domains can be excluded from them. The overview of the rules for the page and their editor are Declarative Net Request Sandbox (it runs in a sandbox); this module converts the rules into the browser and asks for the permissions."
+	},
+	"declarativeNetRequest_extension_description": {
+		"message": "Modifies HTTP headers and GET parameters, blocks requests and redirects them to HTTPS by your own rules."
+	},
+	"declarativeNetRequest_intro": {
+		"message": "The browser modifies headers and GET parameters, blocks requests and redirects them to HTTPS by the rules of this module itself. The rules are edited in Settings at Declarative Net Request Sandbox; its overview shows the rules that target the page of the active tab."
+	},
+	"declarativeNetRequest_loading": {
+		"message": "Checking the rules status..."
+	},
+	"declarativeNetRequest_disabled": {
+		"message": "Disabled"
+	},
+	"declarativeNetRequest_missing_permission": {
+		"message": "Missing permission to modify and block requests (declarativeNetRequestWithHostAccess and access to all pages)."
+	},
+	"declarativeNetRequest_permission_floating": {
+		"message": "It cannot be granted from the floating window — please open the popup or side panel and allow it there."
+	},
+	"declarativeNetRequest_allow": {
+		"message": "Allow request modification"
+	},
+	"declarativeNetRequest_no_background": {
+		"message": "The rules status cannot be determined. $2"
+	},
+	"declarativeNetRequest_edit_rules": {
+		"message": "Edit rules"
+	},
+	"declarativeNetRequest_status_active_one": {
+		"message": "$1 declarativeNetRequest rule is active in the browser."
+	},
+	"declarativeNetRequest_status_active_other": {
+		"message": "$1 declarativeNetRequest rules are active in the browser."
+	},
+	"declarativeNetRequest_status_disabled": {
+		"message": "The module is off — modifications are inactive."
+	},
+	"declarativeNetRequest_status_not_listed": {
+		"message": "The module is not in the module list — modifications are inactive."
+	},
+	"declarativeNetRequest_status_unavailable": {
+		"message": "The browser does not have declarativeNetRequest rules available yet — try reloading the extension."
+	},
+	"declarativeNetRequest_status_error": {
+		"message": "The browser rejected the rules: $1"
+	},
+	"declarativeNetRequest_rule_untitled": {
+		"message": "Rule $1"
+	},
+	"declarativeNetRequest_folder_untitled": {
+		"message": "(untitled)"
+	},
+	"declarativeNetRequest_folder_in_account": {
+		"message": "$1 (in account)"
+	},
+	"declarativeNetRequest_folder_device_only": {
+		"message": "$1 (on this device only)"
+	},
+	"declarativeNetRequest_notify_unsupported": {
+		"message": "This browser does not support notifications, so matched rules cannot be announced."
+	},
+	"declarativeNetRequest_notify_feedback_unavailable": {
+		"message": "This browser does not expose matched-rule events (Chrome exposes them only to unpacked extensions) — without them only rules that block requests or redirect them to HTTPS can be announced."
+	},
+	"declarativeNetRequest_notify_granted": {
+		"message": "Matched rules will be announced silently."
+	},
+	"declarativeNetRequest_notify_blocked": {
+		"message": "The browser blocks extension notifications. Allow them in browser settings."
+	},
+	"declarativeNetRequest_notify_ask": {
+		"message": "Notifications and matched-rule tracking require browser permission."
+	},
+	"declarativeNetRequest_notify_button": {
+		"message": "Allow notifications and tracking"
+	},
+	"declarativeNetRequest_notify_button_title": {
+		"message": "Allow notifications and declarativeNetRequestFeedback; notices are silent"
+	},
+	"declarativeNetRequest_notify_title": {
+		"message": "declarativeNetRequest rule applied"
+	},
+	"declarativeNetRequest_notify_body_one": {
+		"message": "Rule \"$2\" was applied to request $3."
+	},
+	"declarativeNetRequest_notify_body_other": {
+		"message": "$1 rules were applied; latest: \"$2\" to request $3."
+	},
+	"declarativeNetRequest_notify_requests_granted": {
+		"message": "Blocked requests and requests redirected to HTTPS that the rules with notifications target will be announced silently. The browser does not say which rule blocked or redirected a request — one blocked or redirected by another module or extension (a redirect also by the browser itself, e.g. HSTS) is announced too."
+	},
+	"declarativeNetRequest_notify_requests_ask": {
+		"message": "Notifications and tracking of blocked and redirected requests require browser permission."
+	},
+	"declarativeNetRequest_notify_requests_button": {
+		"message": "Allow notifications and request tracking"
+	},
+	"declarativeNetRequest_notify_requests_button_title": {
+		"message": "Allow notifications and webRequest for all addresses; notices are silent"
+	},
+	"declarativeNetRequest_notify_requests_title": {
+		"message": "Request blocked — declarativeNetRequest"
+	},
+	"declarativeNetRequest_notify_requests_body_one": {
+		"message": "Request $3 was blocked; rule \"$2\" targets it."
+	},
+	"declarativeNetRequest_notify_requests_body_other": {
+		"message": "$1 requests were blocked; latest: $3 (rule \"$2\")."
+	},
+	"declarativeNetRequest_notify_upgraded_title": {
+		"message": "Request redirected to HTTPS — declarativeNetRequest"
+	},
+	"declarativeNetRequest_notify_upgraded_body_one": {
+		"message": "Request $3 was redirected to HTTPS; rule \"$2\" targets it."
+	},
+	"declarativeNetRequest_notify_upgraded_body_other": {
+		"message": "$1 requests were redirected to HTTPS; latest: $3 (rule \"$2\")."
+	},
+	"declarativeNetRequest_log_feedback_unavailable": {
+		"message": "This browser does not expose matched-rule events (Chrome exposes them only to unpacked extensions) — without them only rules that block requests or redirect them to HTTPS can write into the event log."
+	},
+	"declarativeNetRequest_log_granted": {
+		"message": "Matched rules are written into the own event log — the overview of Declarative Net Request Sandbox lists it."
+	},
+	"declarativeNetRequest_log_requests_granted": {
+		"message": "Blocked requests and requests redirected to HTTPS that the rules with the event log target are written into it — the overview of Declarative Net Request Sandbox lists it. The browser does not say which rule blocked or redirected a request — one blocked or redirected by another module or extension (a redirect also by the browser itself, e.g. HSTS) is written too."
+	},
+	"declarativeNetRequest_log_ask": {
+		"message": "The own event log requires browser permission to track matched rules."
+	},
+	"declarativeNetRequest_log_button": {
+		"message": "Allow rule tracking"
+	},
+	"declarativeNetRequest_log_button_title": {
+		"message": "Allow declarativeNetRequestFeedback"
+	},
+	"declarativeNetRequest_log_requests_ask": {
+		"message": "The own event log requires browser permission to track blocked and redirected requests."
+	},
+	"declarativeNetRequest_log_requests_button": {
+		"message": "Allow request tracking"
+	},
+	"declarativeNetRequest_log_requests_button_title": {
+		"message": "Allow webRequest for all addresses"
+	},
+	"declarativeNetRequest_missing_bookmarks": {
+		"message": "Rules with a bookmark folder need access to bookmarks — without it no folder can be chosen and rules with a folder don't apply."
+	},
+	"declarativeNetRequest_allow_bookmarks": {
+		"message": "Allow access to bookmarks"
+	},
+	"declarativeNetRequest_service_invalid_rules": {
+		"message": "The rules cannot be stored: at most $1 rules and $2 kB."
+	},
+	"declarativeNetRequest_service_unknown_rule": {
+		"message": "There is no rule \"$1\" — it may have been removed in the meantime."
+	},
+	"declarativeNetRequest_service_invalid_domain": {
+		"message": "\"$1\" is not a domain a rule can be suspended for."
+	},
+	"declarativeNetRequest_service_unknown_folder": {
+		"message": "\"$1\" is not the id of a bookmark folder."
+	},
+	"declarativeNetRequest_service_unknown_log_entry": {
+		"message": "There is no entry \"$1\" in the event log."
+	},
+	"declarativeNetRequest_service_reload_refused": {
+		"message": "Only the page of the active tab of this window can be reloaded."
+	},
+	"declarativeNetRequest_service_block_refused": {
+		"message": "Only the page of the active tab of this window can be blocked, at the address it has now."
+	},
+	"declarativeNetRequest_service_except_refused": {
+		"message": "Only the domain of the page of the active tab of this window can be added to the exceptions of a rule, with the address it has now."
+	}
+}

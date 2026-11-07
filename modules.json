@@ -1,0 +1,5 @@
+[
+	"./modules/declarativeNetRequest/declarativeNetRequest.mjs",
+	"sandbox://declarativeNetRequestSandbox/declarativeNetRequestSandbox.js",
+	"./modules/onboardingModule/onboardingModule.mjs"
+]

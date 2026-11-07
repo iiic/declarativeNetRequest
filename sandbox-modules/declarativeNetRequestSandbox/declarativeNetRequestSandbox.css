@@ -1,0 +1,738 @@
+/* Look of the overview of the rules for the page and of the editor of the rules — a file of the package
+   (registerModule({ styles }), see STYLES in module.mjs): the sandbox applies it to its own page after
+   mvp.css, so it reaches nothing outside the module's sandbox frame. Colors from the appearance variables
+   the sandbox page gets from the page that embeds it (--color-…, see collectSandboxTheme() in base.mjs),
+   so they fit both the light and the dark look. Everything is nested under the element's tag like in a
+   module from the package. */
+
+extension-declarative-net-request-sandbox {
+
+	/* The overview of the rules that target the page of the active tab. */
+	.rules {
+		margin: 4px 0;
+		padding-left: 0;
+		/* The marker of the details stands in for the bullet. */
+		list-style: none;
+
+		&>li {
+			padding: 1px 0;
+		}
+
+		/* The color of a rule chosen in the editor: a thin line to the left of its text (_createRuleItem() sets
+		   --dnr-rule-color). As soon as a rule of the list has one, all of them make room for it — the texts of the
+		   rules without a color stay aligned. */
+		&:has(>li.colored)>li {
+			padding-left: 6px;
+			border-left: 3px solid var(--dnr-rule-color, transparent);
+		}
+
+		/* One rule: the summary (title, scope) and its folded edits and buttons — without the 1.3rem margins
+		   from mvp.css and the bold summary (the title is bold itself). */
+		& details {
+			margin: 0;
+		}
+
+		& summary {
+			font-weight: normal;
+		}
+
+		/* A temporarily suspended rule. */
+		&>li.suspended {
+			color: var(--color-text-muted);
+		}
+
+		/* The buttons of a rule below its edits, in the part that folds away. */
+		& .buttons {
+			gap: 4px 6px;
+			margin: 2px 0 4px 1.2em;
+		}
+
+		& button.suspend {
+			margin: 0;
+			padding: 0 6px;
+		}
+
+		/* "Suspend rule temporarily for <domain>" and "Restore rule for <domain>" — outlined in the color of links, the same as
+		   the filled buttons for the whole rule next to them. A disabled one keeps the look of mvp.css. */
+		& button.suspend.domain:not(:disabled) {
+			background-color: transparent;
+			border-color: var(--color-link);
+			color: var(--color-link);
+		}
+
+		/* "Add <domain> to the exceptions list" — the same domain, but permanent (into the "Except" domains of the rule): outlined
+		   in the second color of mvp.css (purple, magenta in the dark look), so it is told apart from the temporary suspension for the domain next to it. */
+		& button.suspend.except:not(:disabled) {
+			background-color: transparent;
+			border-color: var(--color-secondary);
+			color: var(--color-secondary);
+		}
+	}
+
+	.scope {
+		font-size: 0.9em;
+		color: var(--color-text-muted);
+	}
+
+	.edits {
+		margin: 0;
+		padding-left: 1.2em;
+		font-family: monospace;
+		font-size: 0.9em;
+		overflow-wrap: anywhere;
+	}
+
+	.hint {
+		margin: 4px 0;
+		font-size: 0.9em;
+		color: var(--color-text-muted);
+	}
+
+	.problem {
+		margin: 4px 0;
+		font-size: 0.9em;
+		color: var(--color-error);
+	}
+
+	.buttons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+	}
+
+	/* Small buttons — overrides the large blue buttons from mvp.css. */
+	button {
+		margin: 4px 0 0;
+		padding: 2px 8px;
+		font-size: 0.9em;
+	}
+
+	/* The editor of the rules in Settings (rulesEditor.mjs). At least 1000 px wide: the sandbox reports that width
+	   as the one the content fits in, so the settings page gives the frame that much room (up to the width of the
+	   page — on a narrower one the editor scrolls). */
+	.dnr-editor {
+		min-width: 1000px;
+
+		.dnr-editor-hint {
+			margin: 2px 0 6px;
+			font-size: 0.9em;
+			color: var(--color-text-muted);
+		}
+
+		.dnr-editor-notice {
+			margin: 4px 0 8px;
+
+			&>div {
+				margin: 2px 0;
+			}
+
+			& .dnr-problem {
+				color: var(--color-error);
+			}
+		}
+
+		.dnr-rules {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+
+		.dnr-rule {
+			margin: 0;
+			padding: 8px 10px;
+			border: 1px solid var(--color-border);
+			border-radius: 6px;
+			min-width: 0;
+		}
+
+		.dnr-rule--disabled {
+			opacity: 0.6;
+		}
+
+		.dnr-rule-head {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			margin-bottom: 6px;
+		}
+
+		/* Rule details below the header (collapsible) — without the 1.3rem margins
+		   from mvp.css and the bold summary. */
+		.dnr-rule-details {
+			margin: 0;
+		}
+
+		.dnr-rule-details>summary {
+			cursor: pointer;
+			font-size: 0.9em;
+			font-weight: normal;
+			color: var(--color-text-muted);
+
+			&.dnr-problem {
+				color: var(--color-error);
+			}
+		}
+
+		.dnr-rule-details[open]>summary {
+			margin-bottom: 6px;
+		}
+
+		.dnr-rule-title {
+			flex: 1 1 14rem;
+			min-width: 0;
+			max-width: none;
+			margin: 0;
+		}
+
+		/* "What to change" across the whole width, below it "Which requests" and "Where" side by side, on
+		   a narrow page one below the other. */
+		.dnr-rule-body {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+
+		.dnr-rule-lower {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px 16px;
+		}
+
+		.dnr-rule-parts {
+			flex: 1 1 14rem;
+		}
+
+		.dnr-rule-where {
+			flex: 2 1 20rem;
+		}
+
+		.dnr-rule-section {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+			min-width: 0;
+		}
+
+		.dnr-rule-section-title {
+			font-weight: bold;
+		}
+
+		.dnr-section-hint {
+			color: var(--color-text-muted);
+		}
+
+		/* Choosing the rule kind (headers / GET parameters) — only as wide as it
+		   needs (overrides width: 100 % from mvp.css). */
+		.dnr-kind {
+			align-self: flex-start;
+			width: auto;
+			max-width: 100%;
+			margin: 0;
+		}
+
+		/* The form part of one kind: the hint, the edit rows, the button. */
+		.dnr-edits-part {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+
+			&[hidden] {
+				display: none;
+			}
+		}
+
+		.dnr-edits {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+		}
+
+		/* An edit row: (direction,) name, operation, value, ×. On a narrow page it
+		   wraps. The field widths are determined by the row — overrides width: 100 % from
+		   mvp.css. */
+		.dnr-edit {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 4px;
+
+			& select,
+			& input[type="text"] {
+				width: auto;
+				max-width: 100%;
+				min-width: 0;
+				box-sizing: border-box;
+				margin: 0;
+			}
+
+			& select {
+				flex: 0 0 auto;
+			}
+
+			& .dnr-edit-name {
+				flex: 1 1 10rem;
+				font-family: monospace;
+			}
+
+			& .dnr-edit-value {
+				flex: 2 1 12rem;
+				font-family: monospace;
+			}
+
+			& .dnr-edit-value:disabled {
+				opacity: 0.5;
+			}
+		}
+
+		.dnr-parts {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 2px 12px;
+		}
+
+		/* The note of a blocking rule below the checkboxes — the lines below each other (no display here: [hidden] hides it). */
+		.dnr-scripts-note {
+			margin-top: 4px;
+
+			& small {
+				display: block;
+			}
+
+			& small + small {
+				margin-top: 4px;
+			}
+		}
+
+		/* A label above a field — overrides the block and bold label from mvp.css only
+		   for the text, the field stays full width. */
+		.dnr-field {
+			display: flex;
+			flex-direction: column;
+			gap: 2px;
+			margin: 0;
+			font-weight: normal;
+
+			& small {
+				color: var(--color-text-muted);
+			}
+
+			& input,
+			& textarea,
+			& select {
+				width: 100%;
+				max-width: 100%;
+				box-sizing: border-box;
+				margin: 0;
+			}
+
+			& textarea {
+				font-family: monospace;
+				resize: vertical;
+			}
+
+			/* The protocol of a rule that upgrades to HTTPS (it targets only http://). */
+			&[hidden] {
+				display: none;
+			}
+		}
+
+		/* Examples in empty fields must not be confused with real values. */
+		& ::placeholder {
+			color: var(--color-text-muted);
+			font-style: italic;
+			opacity: 0.6;
+		}
+
+		.dnr-check {
+			display: inline-flex;
+			align-items: center;
+			gap: 4px;
+			margin: 0;
+			font-weight: normal;
+			white-space: nowrap;
+
+			& input {
+				margin: 0;
+			}
+
+			/* WebSocket in a parameter rule (cannot be changed). */
+			&:has(input:disabled) {
+				opacity: 0.5;
+			}
+		}
+
+		.dnr-invalid {
+			outline: 2px solid var(--color-error);
+		}
+
+		.dnr-editor-message {
+			font-size: 0.85em;
+			color: var(--color-error);
+
+			&:empty {
+				display: none;
+			}
+		}
+
+		.dnr-rule-head button,
+		.dnr-edit button {
+			margin: 0;
+		}
+
+		/* The color of the rule between the title and × — the same picker as in the color editor of visualHistory. A rule
+		   without a color shows it dimmed until the user picks one. */
+		.dnr-rule-color {
+			flex: none;
+			width: 38px;
+			height: 30px;
+			margin: 0;
+			padding: 1px 2px;
+			box-sizing: border-box;
+			cursor: pointer;
+		}
+
+		.dnr-rule-color--unset {
+			opacity: 0.4;
+		}
+
+		/* The first click on × of a rule asks for a second one (requireSecondClick() in rulesEditor.mjs). */
+		.dnr-remove.dnr-remove--confirm {
+			background-color: var(--color-error);
+			border-color: var(--color-error);
+			color: var(--color-bg);
+		}
+
+		.dnr-add-edit {
+			align-self: flex-start;
+		}
+
+		/* "+ Add parameter" and next to it "+ Add a related parameter" (editsPart() in rulesEditor.mjs); on a narrow page
+		   one below the other. */
+		.dnr-add-edits {
+			display: flex;
+			flex-wrap: wrap;
+			column-gap: 8px;
+		}
+
+		/* "and at the same time" between the two names of an edit with a related parameter. */
+		.dnr-edit-and {
+			flex: none;
+			color: var(--color-text-muted);
+			font-size: 0.85em;
+			white-space: nowrap;
+		}
+
+		/* The rule needs regular expressions instead of urlFilter (regexNotes() in rulesEditor.mjs) — the same mark as the
+		   performance warning of the regular expressions of filterResponseData. */
+		.dnr-regex-warning {
+			display: flex;
+			flex-direction: column;
+			gap: 2px;
+			padding: 4px 6px;
+			border-left: 3px solid var(--color-error);
+			font-size: 0.9em;
+			overflow-wrap: anywhere;
+
+			&:empty {
+				display: none;
+			}
+		}
+
+		/* "Show the rule in JSON" at the bottom of a card: the button, below it the notes and the read-only JSON
+		   (renderJson() in rulesEditor.mjs) — long lines scroll instead of wrapping. */
+		.dnr-rule-json {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+		}
+
+		.dnr-json-toggle {
+			align-self: flex-start;
+			margin: 0;
+		}
+
+		.dnr-json-panel {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+
+			&[hidden] {
+				display: none;
+			}
+		}
+
+		.dnr-json-notes {
+			font-size: 0.9em;
+			color: var(--color-text-muted);
+
+			&:empty {
+				display: none;
+			}
+		}
+
+		.dnr-json-output {
+			width: 100%;
+			max-width: 100%;
+			box-sizing: border-box;
+			margin: 0;
+			font-family: monospace;
+			font-size: 0.85em;
+			white-space: pre;
+			overflow: auto;
+			resize: vertical;
+		}
+
+		/* "Notify when the rule is applied" and "List the rule in the overview": the heading and below it the checkboxes. */
+		.dnr-notify-setting {
+			display: flex;
+			flex-direction: column;
+			gap: 2px;
+		}
+
+		.dnr-notify-title {
+			font-size: 0.95em;
+			font-weight: 600;
+		}
+
+		.dnr-notify-options {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 2px 16px;
+			padding-left: 0.6em;
+		}
+
+		.dnr-notify-status {
+			margin: 2px 0;
+			padding-left: 0.6em;
+			font-size: 0.9em;
+			color: var(--color-text-muted);
+		}
+
+		/* The result of the last saving ("Save module settings" of Settings), or the unsaved changes. */
+		.dnr-editor-actions {
+			margin-top: 10px;
+
+			&:has(> .dnr-editor-saved:empty) {
+				display: none;
+			}
+		}
+
+		.dnr-editor-saved {
+			font-size: 0.9em;
+			color: var(--color-text-muted);
+
+			&.dnr-problem {
+				color: var(--color-error);
+			}
+		}
+	}
+
+	/* The overview of temporarily suspended rules in Settings (suspensionsViewer.mjs). */
+	.dnr-suspensions {
+		margin-top: 16px;
+
+		.dnr-suspensions-title {
+			font-weight: bold;
+		}
+
+		.dnr-editor-hint {
+			margin: 2px 0 6px;
+			font-size: 0.9em;
+			color: var(--color-text-muted);
+		}
+
+		.dnr-suspensions-list {
+			margin: 0;
+			padding-left: 1.2em;
+
+			&>li {
+				padding: 2px 0;
+			}
+		}
+
+		.dnr-suspensions-empty {
+			color: var(--color-text-muted);
+		}
+
+		button {
+			margin: 0;
+		}
+	}
+
+	/* The own event log at the bottom of the overview (matchLogViewer.mjs) — like the listing of notificationsCenter. */
+	.dnr-log {
+		margin: 10px 0 0;
+		padding-top: 6px;
+		border-top: 1px solid var(--color-border);
+
+		&>summary {
+			font-weight: 600;
+		}
+
+		/* Search, the rule filter and the buttons — without the big margins and width from mvp.css. */
+		.dnr-log-toolbar {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 4px 8px;
+			margin: 6px 0 4px;
+
+			&[hidden] {
+				display: none;
+			}
+
+			& input[type="search"] {
+				flex: 1 1 10em;
+				min-width: 0;
+				margin: 0;
+				padding: 2px 6px;
+			}
+
+			& select {
+				width: auto;
+				min-width: 0;
+				max-width: 14em;
+				margin: 0;
+				padding: 2px 4px;
+			}
+
+			& button {
+				margin: 0;
+			}
+		}
+
+		/* The second click of "Clear log" confirms it. */
+		.dnr-log-confirm {
+			color: var(--color-error);
+		}
+
+		.dnr-log-heading {
+			margin: 2px 0;
+			font-size: 0.9em;
+			color: var(--color-text-label);
+		}
+
+		.dnr-log-list {
+			margin: 2px 0 0;
+			padding-left: 1.6em;
+
+			&>li {
+				padding: 1px 0;
+			}
+
+			/* The color of the rule of an entry: a thin line to the left of it like in the overview of the rules
+			   (createItem() in matchLogViewer.mjs sets --dnr-rule-color). As soon as an entry of the listing has one, all of
+			   them make room for it — the entries of the rules without a color stay aligned. */
+			&:has(>li.colored)>li {
+				padding-left: 6px;
+				border-left: 3px solid var(--dnr-rule-color, transparent);
+			}
+
+			/* The ordinal numbers — smaller and grey, so they do not outshine the content. */
+			&>li::marker {
+				font-size: 0.8em;
+				color: var(--color-text-muted);
+			}
+
+			/* An entry is a <details> — without the borders and the bold font from mvp.css. */
+			& details {
+				margin: 0;
+			}
+
+			& summary {
+				font-weight: normal;
+
+				&::marker {
+					color: var(--color-text-muted);
+				}
+			}
+		}
+
+		time {
+			font-size: 0.85em;
+			color: var(--color-text-muted);
+		}
+
+		.dnr-log-rule {
+			font-weight: 600;
+		}
+
+		/* The address of the request below the line. */
+		.dnr-log-url {
+			display: block;
+			margin-left: 1.1em;
+			font-family: monospace;
+			font-size: 0.85em;
+			color: var(--color-text-label);
+			overflow-wrap: anywhere;
+		}
+
+		/* What the rule did and how many times. */
+		.dnr-chip {
+			display: inline-block;
+			padding: 0 6px;
+			border: 1px solid currentColor;
+			border-radius: 999px;
+			font-size: 0.8em;
+			line-height: 1.4;
+		}
+
+		.dnr-chip--block {
+			color: var(--color-error);
+		}
+
+		.dnr-chip--headers,
+		.dnr-chip--params,
+		.dnr-chip--upgrade {
+			color: var(--color-success);
+		}
+
+		.dnr-chip--count {
+			color: var(--color-text-muted);
+		}
+
+		/* An unfolded entry: name — value pairs. */
+		.dnr-log-details {
+			margin: 2px 0 6px 1.1em;
+
+			& dl {
+				display: grid;
+				grid-template-columns: minmax(7em, max-content) minmax(0, 1fr);
+				gap: 1px 10px;
+				margin: 0;
+				font-size: 0.9em;
+			}
+
+			& dt {
+				color: var(--color-text-label);
+				font-weight: normal;
+			}
+
+			& dd {
+				margin: 0;
+				overflow-wrap: anywhere;
+			}
+
+			/* The full time like the other values (not the small grey one of the row). */
+			& time {
+				font-size: inherit;
+				color: inherit;
+			}
+		}
+
+		.dnr-log-delete {
+			float: right;
+			margin: 0;
+			padding: 0 4px;
+			line-height: 1.4;
+		}
+
+		.dnr-log-more {
+			margin-top: 4px;
+
+			&[hidden] {
+				display: none;
+			}
+		}
+	}
+}

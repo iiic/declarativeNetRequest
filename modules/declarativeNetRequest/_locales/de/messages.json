@@ -1,0 +1,179 @@
+{
+	"declarativeNetRequest_description": {
+		"message": "Ändert HTTP-Header und GET-Parameter in der Adresse, blockiert Anfragen und leitet sie in der Kommunikation mit Seiten von HTTP auf HTTPS um (declarativeNetRequest): entfernt und setzt an den Server gesendete und von ihm empfangene Header sowie die Parameter nach „?“ in der Adresse der Anfrage oder blockiert die Anfrage, für die Seite selbst und für die Dateien, die sie lädt (Skripte, Styles, Bilder, …). Regeln lassen sich Domains, bestimmten Adressen oder den Lesezeichen eines Lesezeichenordners zuordnen, und ausgewählte Domains lassen sich davon ausnehmen. Die Übersicht der Regeln für die Seite und ihr Editor sind Declarative Net Request Sandbox (läuft in einer Sandbox); dieses Modul überträgt die Regeln in den Browser und fragt nach den Berechtigungen."
+	},
+	"declarativeNetRequest_extension_description": {
+		"message": "Ändert HTTP-Header und GET-Parameter, blockiert Anfragen und leitet sie nach Ihren Regeln auf HTTPS um."
+	},
+	"declarativeNetRequest_intro": {
+		"message": "Header und GET-Parameter ändert und Anfragen blockiert oder auf HTTPS umleitet der Browser selbst nach den Regeln dieses Moduls. Die Regeln werden in den Einstellungen bei Declarative Net Request Sandbox bearbeitet; seine Übersicht zeigt die Regeln, die auf die Seite des aktiven Tabs zielen."
+	},
+	"declarativeNetRequest_loading": {
+		"message": "Status der Regeln wird geprüft..."
+	},
+	"declarativeNetRequest_disabled": {
+		"message": "Deaktiviert"
+	},
+	"declarativeNetRequest_missing_permission": {
+		"message": "Berechtigung zum Ändern und Blockieren von Anfragen fehlt (declarativeNetRequestWithHostAccess und Zugriff auf alle Seiten)."
+	},
+	"declarativeNetRequest_permission_floating": {
+		"message": "Sie kann nicht im schwebenden Fenster erteilt werden — öffnen Sie bitte das Pop-up oder die Seitenleiste und erlauben Sie sie dort."
+	},
+	"declarativeNetRequest_allow": {
+		"message": "Ändern von Anfragen erlauben"
+	},
+	"declarativeNetRequest_no_background": {
+		"message": "Der Status der Regeln lässt sich nicht ermitteln. $2"
+	},
+	"declarativeNetRequest_edit_rules": {
+		"message": "Regeln bearbeiten"
+	},
+	"declarativeNetRequest_status_active_one": {
+		"message": "Im Browser ist $1 declarativeNetRequest-Regel aktiv."
+	},
+	"declarativeNetRequest_status_active_other": {
+		"message": "Im Browser sind $1 declarativeNetRequest-Regeln aktiv."
+	},
+	"declarativeNetRequest_status_disabled": {
+		"message": "Das Modul ist deaktiviert — Änderungen sind inaktiv."
+	},
+	"declarativeNetRequest_status_not_listed": {
+		"message": "Das Modul ist nicht in der Modulliste — Änderungen sind inaktiv."
+	},
+	"declarativeNetRequest_status_unavailable": {
+		"message": "Dem Browser stehen die declarativeNetRequest-Regeln noch nicht zur Verfügung — versuchen Sie, die Erweiterung neu zu laden."
+	},
+	"declarativeNetRequest_status_error": {
+		"message": "Der Browser hat die Regeln abgelehnt: $1"
+	},
+	"declarativeNetRequest_rule_untitled": {
+		"message": "Regel $1"
+	},
+	"declarativeNetRequest_folder_untitled": {
+		"message": "(ohne Namen)"
+	},
+	"declarativeNetRequest_folder_in_account": {
+		"message": "$1 (im Konto)"
+	},
+	"declarativeNetRequest_folder_device_only": {
+		"message": "$1 (nur auf diesem Gerät)"
+	},
+	"declarativeNetRequest_notify_unsupported": {
+		"message": "Dieser Browser unterstützt keine Benachrichtigungen – angewendete Regeln können nicht gemeldet werden."
+	},
+	"declarativeNetRequest_notify_feedback_unavailable": {
+		"message": "Dieser Browser stellt kein Ereignis für angewendete Regeln bereit (Chrome nur entpackten Erweiterungen) – ohne es können nur Regeln gemeldet werden, die Anfragen blockieren oder auf HTTPS umleiten."
+	},
+	"declarativeNetRequest_notify_granted": {
+		"message": "Angewendete Regeln werden lautlos gemeldet."
+	},
+	"declarativeNetRequest_notify_blocked": {
+		"message": "Der Browser blockiert Benachrichtigungen der Erweiterung – erlaube sie in den Browsereinstellungen."
+	},
+	"declarativeNetRequest_notify_ask": {
+		"message": "Benachrichtigungen und die Verfolgung angewendeter Regeln erfordern eine Browserberechtigung."
+	},
+	"declarativeNetRequest_notify_button": {
+		"message": "Benachrichtigungen und Verfolgung erlauben"
+	},
+	"declarativeNetRequest_notify_button_title": {
+		"message": "notifications und declarativeNetRequestFeedback erlauben; Benachrichtigungen sind lautlos"
+	},
+	"declarativeNetRequest_notify_title": {
+		"message": "declarativeNetRequest-Regel angewendet"
+	},
+	"declarativeNetRequest_notify_body_one": {
+		"message": "Regel „$2“ wurde auf die Anfrage $3 angewendet."
+	},
+	"declarativeNetRequest_notify_body_other": {
+		"message": "$1 Regeln wurden angewendet; zuletzt: „$2“ auf die Anfrage $3."
+	},
+	"declarativeNetRequest_notify_requests_granted": {
+		"message": "Blockierte und auf HTTPS umgeleitete Anfragen, auf die die Regeln mit Benachrichtigung zielen, werden lautlos gemeldet. Der Browser sagt nicht, welche Regel eine Anfrage blockiert oder umgeleitet hat – auch eine von einem anderen Modul oder einer anderen Erweiterung blockierte oder umgeleitete Anfrage wird gemeldet (eine Umleitung auch durch den Browser selbst, z. B. HSTS)."
+	},
+	"declarativeNetRequest_notify_requests_ask": {
+		"message": "Benachrichtigungen und die Verfolgung blockierter und umgeleiteter Anfragen erfordern eine Browserberechtigung."
+	},
+	"declarativeNetRequest_notify_requests_button": {
+		"message": "Benachrichtigungen und Anfrageverfolgung erlauben"
+	},
+	"declarativeNetRequest_notify_requests_button_title": {
+		"message": "notifications und webRequest für alle Adressen erlauben; Benachrichtigungen sind lautlos"
+	},
+	"declarativeNetRequest_notify_requests_title": {
+		"message": "Anfrage blockiert – declarativeNetRequest"
+	},
+	"declarativeNetRequest_notify_requests_body_one": {
+		"message": "Anfrage $3 wurde blockiert; Regel „$2“ zielt auf sie."
+	},
+	"declarativeNetRequest_notify_requests_body_other": {
+		"message": "$1 Anfragen wurden blockiert; zuletzt: $3 (Regel „$2“)."
+	},
+	"declarativeNetRequest_notify_upgraded_title": {
+		"message": "Anfrage auf HTTPS umgeleitet – declarativeNetRequest"
+	},
+	"declarativeNetRequest_notify_upgraded_body_one": {
+		"message": "Anfrage $3 wurde auf HTTPS umgeleitet; Regel „$2“ zielt auf sie."
+	},
+	"declarativeNetRequest_notify_upgraded_body_other": {
+		"message": "$1 Anfragen wurden auf HTTPS umgeleitet; zuletzt: $3 (Regel „$2“)."
+	},
+	"declarativeNetRequest_log_feedback_unavailable": {
+		"message": "Dieser Browser stellt kein Ereignis für angewendete Regeln bereit (Chrome nur entpackten Erweiterungen) – ohne es können nur Regeln, die Anfragen blockieren oder auf HTTPS umleiten, in das Ereignisprotokoll schreiben."
+	},
+	"declarativeNetRequest_log_granted": {
+		"message": "Angewendete Regeln werden in das eigene Ereignisprotokoll geschrieben – die Übersicht von Declarative Net Request Sandbox listet es auf."
+	},
+	"declarativeNetRequest_log_requests_granted": {
+		"message": "Blockierte und auf HTTPS umgeleitete Anfragen, auf die die Regeln mit Ereignisprotokoll zielen, werden darin eingetragen – die Übersicht von Declarative Net Request Sandbox listet es auf. Der Browser sagt nicht, welche Regel eine Anfrage blockiert oder umgeleitet hat – auch eine von einem anderen Modul oder einer anderen Erweiterung blockierte oder umgeleitete Anfrage wird eingetragen (eine Umleitung auch durch den Browser selbst, z. B. HSTS)."
+	},
+	"declarativeNetRequest_log_ask": {
+		"message": "Das eigene Ereignisprotokoll erfordert eine Browserberechtigung zur Verfolgung angewendeter Regeln."
+	},
+	"declarativeNetRequest_log_button": {
+		"message": "Regelverfolgung erlauben"
+	},
+	"declarativeNetRequest_log_button_title": {
+		"message": "declarativeNetRequestFeedback erlauben"
+	},
+	"declarativeNetRequest_log_requests_ask": {
+		"message": "Das eigene Ereignisprotokoll erfordert eine Browserberechtigung zur Verfolgung blockierter und umgeleiteter Anfragen."
+	},
+	"declarativeNetRequest_log_requests_button": {
+		"message": "Anfrageverfolgung erlauben"
+	},
+	"declarativeNetRequest_log_requests_button_title": {
+		"message": "webRequest für alle Adressen erlauben"
+	},
+	"declarativeNetRequest_missing_bookmarks": {
+		"message": "Regeln mit Lesezeichenordner brauchen Zugriff auf Lesezeichen — ohne ihn lässt sich kein Ordner wählen und Regeln mit Ordner gelten nicht."
+	},
+	"declarativeNetRequest_allow_bookmarks": {
+		"message": "Zugriff auf Lesezeichen erlauben"
+	},
+	"declarativeNetRequest_service_invalid_rules": {
+		"message": "Die Regeln lassen sich nicht speichern: höchstens $1 Regeln und $2 kB."
+	},
+	"declarativeNetRequest_service_unknown_rule": {
+		"message": "Die Regel „$1“ gibt es nicht – sie wurde inzwischen vielleicht entfernt."
+	},
+	"declarativeNetRequest_service_invalid_domain": {
+		"message": "„$1“ ist keine Domain, für die sich eine Regel aussetzen lässt."
+	},
+	"declarativeNetRequest_service_unknown_folder": {
+		"message": "„$1“ ist keine ID eines Lesezeichenordners."
+	},
+	"declarativeNetRequest_service_unknown_log_entry": {
+		"message": "Im Ereignisprotokoll gibt es keinen Eintrag „$1“."
+	},
+	"declarativeNetRequest_service_reload_refused": {
+		"message": "Nur die Seite des aktiven Tabs dieses Fensters lässt sich neu laden."
+	},
+	"declarativeNetRequest_service_block_refused": {
+		"message": "Nur die Seite des aktiven Tabs dieses Fensters lässt sich blockieren, und zwar mit der Adresse, die sie gerade hat."
+	},
+	"declarativeNetRequest_service_except_refused": {
+		"message": "Zu den Ausnahmen einer Regel lässt sich nur die Domain der Seite des aktiven Tabs dieses Fensters hinzufügen, und zwar mit der Adresse, die sie gerade hat."
+	}
+}

@@ -1,0 +1,191 @@
+{
+	"declarativeNetRequest_description": {
+		"message": "Upravuje HTTP hlavičky a GET parametry v adrese, blokuje požadavky a přesměrovává je z HTTP na HTTPS při komunikaci se stránkami (declarativeNetRequest): odstraňuje a nastavuje hlavičky odesílané serveru i přijaté od něj a parametry za „?“ v adrese požadavku, nebo požadavek zablokuje, u stránky samotné i u souborů, které načítá (skripty, styly, obrázky, …). Pravidla jde přiřadit doménám, konkrétním adresám nebo záložkám ve složce záložek a vybrané domény z nich vyjmout. Přehled pravidel pro stránku a jejich editor je Declarative Net Request Sandbox (běží v sandboxu); tento modul převádí pravidla do prohlížeče a žádá o oprávnění."
+	},
+	"declarativeNetRequest_extension_description": {
+		"message": "Upravuje HTTP hlavičky a GET parametry, blokuje požadavky a přesměrovává je na HTTPS podle tvých pravidel."
+	},
+	"declarativeNetRequest_intro": {
+		"message": "Hlavičky a GET parametry upravuje a požadavky blokuje a přesměrovává na HTTPS podle pravidel tohoto modulu sám prohlížeč. Pravidla se upravují v Nastavení u Declarative Net Request Sandbox; jeho přehled ukazuje pravidla, která míří na stránku aktivní karty."
+	},
+	"declarativeNetRequest_loading": {
+		"message": "Zjišťuji stav pravidel..."
+	},
+	"declarativeNetRequest_disabled": {
+		"message": "Vypnutý"
+	},
+	"declarativeNetRequest_missing_permission": {
+		"message": "Chybí oprávnění upravovat a blokovat požadavky (declarativeNetRequestWithHostAccess a přístup ke všem stránkám)."
+	},
+	"declarativeNetRequest_permission_floating": {
+		"message": "Z plovoucího okna ho nejde udělit — otevři prosím popup nebo postranní panel a povol ho tam."
+	},
+	"declarativeNetRequest_allow": {
+		"message": "Povolit úpravy požadavků"
+	},
+	"declarativeNetRequest_no_background": {
+		"message": "Stav pravidel nejde zjistit. $2"
+	},
+	"declarativeNetRequest_edit_rules": {
+		"message": "Upravit pravidla"
+	},
+	"declarativeNetRequest_status_active_one": {
+		"message": "V prohlížeči platí $1 pravidlo declarativeNetRequest."
+	},
+	"declarativeNetRequest_status_active_few": {
+		"message": "V prohlížeči platí $1 pravidla declarativeNetRequest."
+	},
+	"declarativeNetRequest_status_active_other": {
+		"message": "V prohlížeči platí $1 pravidel declarativeNetRequest."
+	},
+	"declarativeNetRequest_status_disabled": {
+		"message": "Modul je vypnutý — úpravy neplatí."
+	},
+	"declarativeNetRequest_status_not_listed": {
+		"message": "Modul není v seznamu modulů — úpravy neplatí."
+	},
+	"declarativeNetRequest_status_unavailable": {
+		"message": "Prohlížeč zatím pravidla declarativeNetRequest nemá k dispozici — zkus rozšíření znovu načíst."
+	},
+	"declarativeNetRequest_status_error": {
+		"message": "Prohlížeč pravidla odmítl: $1"
+	},
+	"declarativeNetRequest_rule_untitled": {
+		"message": "Pravidlo $1"
+	},
+	"declarativeNetRequest_folder_untitled": {
+		"message": "(bez názvu)"
+	},
+	"declarativeNetRequest_folder_in_account": {
+		"message": "$1 (v účtu)"
+	},
+	"declarativeNetRequest_folder_device_only": {
+		"message": "$1 (jen v zařízení)"
+	},
+	"declarativeNetRequest_notify_unsupported": {
+		"message": "Prohlížeč oznámení nepodporuje — použitá pravidla neoznámí."
+	},
+	"declarativeNetRequest_notify_feedback_unavailable": {
+		"message": "Prohlížeč neposkytuje událost použitých pravidel (Chrome ji zpřístupňuje jen rozbaleným rozšířením) — bez ní jde oznamovat jen pravidla, která požadavky blokují nebo přesměrovávají na HTTPS."
+	},
+	"declarativeNetRequest_notify_granted": {
+		"message": "Použití pravidel bude oznamovat bez zvuku."
+	},
+	"declarativeNetRequest_notify_blocked": {
+		"message": "Prohlížeč oznámení rozšíření blokuje — povol je v nastavení prohlížeče."
+	},
+	"declarativeNetRequest_notify_ask": {
+		"message": "Oznámení a sledování použitých pravidel vyžaduje povolení prohlížeče."
+	},
+	"declarativeNetRequest_notify_button": {
+		"message": "Povolit oznámení a sledování"
+	},
+	"declarativeNetRequest_notify_button_title": {
+		"message": "Povolit notifications a declarativeNetRequestFeedback; oznámení jsou bez zvuku"
+	},
+	"declarativeNetRequest_notify_title": {
+		"message": "Použito pravidlo declarativeNetRequest"
+	},
+	"declarativeNetRequest_notify_body_one": {
+		"message": "Pravidlo „$2“ se použilo pro požadavek $3."
+	},
+	"declarativeNetRequest_notify_body_few": {
+		"message": "$1 pravidla se použila; poslední: „$2“ pro požadavek $3."
+	},
+	"declarativeNetRequest_notify_body_other": {
+		"message": "$1 pravidel se použilo; poslední: „$2“ pro požadavek $3."
+	},
+	"declarativeNetRequest_notify_requests_granted": {
+		"message": "Zablokované požadavky a požadavky přesměrované na HTTPS, na které míří pravidla s oznámením, bude oznamovat bez zvuku. Prohlížeč neříká, které pravidlo požadavek zablokovalo nebo přesměrovalo — oznámí i požadavek, který zablokoval nebo přesměroval jiný modul nebo rozšíření (přesměrování i sám prohlížeč, např. HSTS)."
+	},
+	"declarativeNetRequest_notify_requests_ask": {
+		"message": "Oznámení a sledování zablokovaných a přesměrovaných požadavků vyžaduje povolení prohlížeče."
+	},
+	"declarativeNetRequest_notify_requests_button": {
+		"message": "Povolit oznámení a sledování požadavků"
+	},
+	"declarativeNetRequest_notify_requests_button_title": {
+		"message": "Povolit notifications a webRequest pro všechny adresy; oznámení jsou bez zvuku"
+	},
+	"declarativeNetRequest_notify_requests_title": {
+		"message": "Zablokovaný požadavek — declarativeNetRequest"
+	},
+	"declarativeNetRequest_notify_requests_body_one": {
+		"message": "Zablokován požadavek $3, na který míří pravidlo „$2“."
+	},
+	"declarativeNetRequest_notify_requests_body_few": {
+		"message": "Zablokovány $1 požadavky, na které míří pravidla; poslední: $3 (pravidlo „$2“)."
+	},
+	"declarativeNetRequest_notify_requests_body_other": {
+		"message": "Zablokováno $1 požadavků, na které míří pravidla; poslední: $3 (pravidlo „$2“)."
+	},
+	"declarativeNetRequest_notify_upgraded_title": {
+		"message": "Požadavek přesměrovaný na HTTPS — declarativeNetRequest"
+	},
+	"declarativeNetRequest_notify_upgraded_body_one": {
+		"message": "Na HTTPS přesměrován požadavek $3, na který míří pravidlo „$2“."
+	},
+	"declarativeNetRequest_notify_upgraded_body_few": {
+		"message": "Na HTTPS přesměrovány $1 požadavky, na které míří pravidla; poslední: $3 (pravidlo „$2“)."
+	},
+	"declarativeNetRequest_notify_upgraded_body_other": {
+		"message": "Na HTTPS přesměrováno $1 požadavků, na které míří pravidla; poslední: $3 (pravidlo „$2“)."
+	},
+	"declarativeNetRequest_log_feedback_unavailable": {
+		"message": "Prohlížeč neposkytuje událost použitých pravidel (Chrome ji zpřístupňuje jen rozbaleným rozšířením) — bez ní jde do logu událostí zapisovat jen pravidla, která požadavky blokují nebo přesměrovávají na HTTPS."
+	},
+	"declarativeNetRequest_log_granted": {
+		"message": "Použití pravidel se zapisuje do vlastního logu událostí — vypisuje ho přehled Declarative Net Request Sandbox."
+	},
+	"declarativeNetRequest_log_requests_granted": {
+		"message": "Zablokované požadavky a požadavky přesměrované na HTTPS, na které míří pravidla s logem událostí, se do něj zapisují — vypisuje ho přehled Declarative Net Request Sandbox. Prohlížeč neříká, které pravidlo požadavek zablokovalo nebo přesměrovalo — zapíše i požadavek, který zablokoval nebo přesměroval jiný modul nebo rozšíření (přesměrování i sám prohlížeč, např. HSTS)."
+	},
+	"declarativeNetRequest_log_ask": {
+		"message": "Vlastní log událostí vyžaduje povolení prohlížeče ke sledování použitých pravidel."
+	},
+	"declarativeNetRequest_log_button": {
+		"message": "Povolit sledování pravidel"
+	},
+	"declarativeNetRequest_log_button_title": {
+		"message": "Povolit declarativeNetRequestFeedback"
+	},
+	"declarativeNetRequest_log_requests_ask": {
+		"message": "Vlastní log událostí vyžaduje povolení prohlížeče ke sledování zablokovaných a přesměrovaných požadavků."
+	},
+	"declarativeNetRequest_log_requests_button": {
+		"message": "Povolit sledování požadavků"
+	},
+	"declarativeNetRequest_log_requests_button_title": {
+		"message": "Povolit webRequest pro všechny adresy"
+	},
+	"declarativeNetRequest_missing_bookmarks": {
+		"message": "Pro pravidla se složkou záložek je potřeba přístup k záložkám — bez něj nejde složku vybrat a pravidla se složkou neplatí."
+	},
+	"declarativeNetRequest_allow_bookmarks": {
+		"message": "Povolit přístup k záložkám"
+	},
+	"declarativeNetRequest_service_invalid_rules": {
+		"message": "Pravidla nejde uložit: nejvýš $1 pravidel a $2 kB."
+	},
+	"declarativeNetRequest_service_unknown_rule": {
+		"message": "Pravidlo „$1“ neexistuje — mezitím bylo možná odstraněno."
+	},
+	"declarativeNetRequest_service_invalid_domain": {
+		"message": "„$1“ není doména, pro kterou jde pravidlo dočasně zrušit."
+	},
+	"declarativeNetRequest_service_unknown_folder": {
+		"message": "„$1“ není id složky záložek."
+	},
+	"declarativeNetRequest_service_unknown_log_entry": {
+		"message": "Záznam „$1“ v logu událostí neexistuje."
+	},
+	"declarativeNetRequest_service_reload_refused": {
+		"message": "Obnovit jde jen stránku aktivní karty tohoto okna."
+	},
+	"declarativeNetRequest_service_block_refused": {
+		"message": "Zablokovat jde jen stránku aktivní karty tohoto okna, a to s adresou, kterou má teď."
+	},
+	"declarativeNetRequest_service_except_refused": {
+		"message": "Do výjimek pravidla jde přidat jen doména stránky aktivní karty tohoto okna, a to s adresou, kterou má teď."
+	}
+}

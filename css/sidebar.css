@@ -1,0 +1,73 @@
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		sans-serif;
+	font-size: 14px;
+	margin: 12px;
+	/* Free space at the end of the page, so that the extension id watermark (.extension-id-watermark) is seen after scrolling down. */
+	padding-bottom: 30px;
+	color: var(--color-text);
+}
+h1 {
+	font-size: 16px;
+	margin: 0 0 12px;
+}
+/* The display of the modules' custom elements is handled by the frame around them — see
+   css/module-frame.css. */
+.module-output {
+	margin-top: 8px;
+	padding: 4px 6px;
+	background: var(--color-panel);
+	border-radius: 4px;
+	white-space: pre-wrap;
+}
+.error {
+	color: var(--color-error);
+}
+/* Only one module output in the side panel: nothing can scroll under it, so pinning has no use — no 📌 button (attachPinButton()
+   in base.mjs), and a frame pinned earlier, when there were more outputs, looks like an unpinned one (it could not be unpinned
+   now, and it would stay limited to --pinned-max-height). The frame keeps its pin for when more outputs come back. The note of
+   a module another extension runs (.module-frame--delegated) is not an output of a module. */
+#modules-output:not(:has(> .module-frame:not(.module-frame--delegated) ~ .module-frame:not(.module-frame--delegated))) {
+	& .module-frame-pin {
+		display: none;
+	}
+
+	& > .module-frame--pinned {
+		position: static;
+		max-height: none;
+		overflow-y: visible;
+		padding-bottom: 0;
+		border-bottom: 0;
+	}
+}
+/* "Do not use the sidebar" is on (see sidebar.mjs). */
+.sidebar-disabled-hint {
+	font-size: 12px;
+	color: var(--color-text-muted);
+}
+
+/* The extension id as a faint watermark in the lower left corner (mountExtensionIdWatermark() in base.mjs) —
+   in the background behind the content (z-index: -1, above the body background; the opaque panels cover it);
+   it does not catch clicks and is not selected. The opacity is on the text only: on the whole mark it would fade
+   the dot before the id too, and that one has the exact color of the id. */
+.extension-id-watermark {
+	position: fixed;
+	left: 12px;
+	bottom: 8px;
+	z-index: -1;
+	max-width: calc(100vw - 24px);
+	font-family: ui-monospace, Consolas, monospace;
+	/* Larger than the text of the page, smaller in a narrow panel so that even a Firefox UUID (36 characters) and the dot fit on one line. */
+	font-size: clamp(15px, calc((100vw - 24px) / 23), 20px);
+	line-height: 1.2;
+	overflow-wrap: anywhere;
+	pointer-events: none;
+	user-select: none;
+}
+.extension-id-watermark-dot {
+	margin-right: 0.4em;
+}
+.extension-id-watermark-text {
+	color: var(--color-text-muted);
+	opacity: 0.25;
+}

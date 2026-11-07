@@ -1,0 +1,179 @@
+{
+	"declarativeNetRequest_description": {
+		"message": "Τροποποιεί κεφαλίδες HTTP και παραμέτρους GET στη διεύθυνση, αποκλείει αιτήματα και τα ανακατευθύνει από HTTP σε HTTPS στην επικοινωνία με τις σελίδες (declarativeNetRequest): αφαιρεί και ορίζει κεφαλίδες που στέλνονται στον διακομιστή και που λαμβάνονται από αυτόν, καθώς και τις παραμέτρους μετά το «?» στη διεύθυνση του αιτήματος, ή αποκλείει το αίτημα, για την ίδια τη σελίδα και για τα αρχεία που φορτώνει (σενάρια, στυλ, εικόνες, …). Οι κανόνες μπορούν να αντιστοιχιστούν σε τομείς, σε συγκεκριμένες διευθύνσεις ή στους σελιδοδείκτες ενός φακέλου σελιδοδεικτών, και επιλεγμένοι τομείς μπορούν να εξαιρεθούν από αυτούς. Η επισκόπηση των κανόνων για τη σελίδα και ο επεξεργαστής τους είναι το Declarative Net Request Sandbox (εκτελείται σε sandbox)· αυτή η μονάδα μεταφέρει τους κανόνες στο πρόγραμμα περιήγησης και ζητά τις άδειες."
+	},
+	"declarativeNetRequest_extension_description": {
+		"message": "Τροποποιεί κεφαλίδες HTTP και παραμέτρους GET, αποκλείει αιτήματα και τα ανακατευθύνει σε HTTPS με δικούς σας κανόνες."
+	},
+	"declarativeNetRequest_intro": {
+		"message": "Τις κεφαλίδες και τις παραμέτρους GET τις τροποποιεί και τα αιτήματα τα αποκλείει ή τα ανακατευθύνει σε HTTPS το ίδιο το πρόγραμμα περιήγησης σύμφωνα με τους κανόνες αυτής της μονάδας. Οι κανόνες επεξεργάζονται στις Ρυθμίσεις, στο Declarative Net Request Sandbox· η επισκόπησή του δείχνει τους κανόνες που στοχεύουν στη σελίδα της ενεργής καρτέλας."
+	},
+	"declarativeNetRequest_loading": {
+		"message": "Έλεγχος κατάστασης κανόνων..."
+	},
+	"declarativeNetRequest_disabled": {
+		"message": "Απενεργοποιημένο"
+	},
+	"declarativeNetRequest_missing_permission": {
+		"message": "Λείπει η άδεια τροποποίησης και αποκλεισμού αιτημάτων (declarativeNetRequestWithHostAccess και πρόσβαση σε όλες τις σελίδες)."
+	},
+	"declarativeNetRequest_permission_floating": {
+		"message": "Δεν μπορεί να παραχωρηθεί από το αιωρούμενο παράθυρο — ανοίξτε το αναδυόμενο παράθυρο ή το πλευρικό πάνελ και επιτρέψτε την εκεί."
+	},
+	"declarativeNetRequest_allow": {
+		"message": "Επιτρέψτε την τροποποίηση αιτημάτων"
+	},
+	"declarativeNetRequest_no_background": {
+		"message": "Δεν είναι δυνατό να προσδιοριστεί η κατάσταση των κανόνων. $2"
+	},
+	"declarativeNetRequest_edit_rules": {
+		"message": "Επεξεργασία κανόνων"
+	},
+	"declarativeNetRequest_status_active_one": {
+		"message": "Στο πρόγραμμα περιήγησης ισχύει $1 κανόνας declarativeNetRequest."
+	},
+	"declarativeNetRequest_status_active_other": {
+		"message": "Στο πρόγραμμα περιήγησης ισχύουν $1 κανόνες declarativeNetRequest."
+	},
+	"declarativeNetRequest_status_disabled": {
+		"message": "Η μονάδα είναι απενεργοποιημένη — οι τροποποιήσεις δεν ισχύουν."
+	},
+	"declarativeNetRequest_status_not_listed": {
+		"message": "Η μονάδα δεν είναι στη λίστα μονάδων — οι τροποποιήσεις δεν ισχύουν."
+	},
+	"declarativeNetRequest_status_unavailable": {
+		"message": "Οι κανόνες declarativeNetRequest δεν είναι ακόμη διαθέσιμοι στο πρόγραμμα περιήγησης — δοκιμάστε να φορτώσετε ξανά την επέκταση."
+	},
+	"declarativeNetRequest_status_error": {
+		"message": "Το πρόγραμμα περιήγησης απέρριψε τους κανόνες: $1"
+	},
+	"declarativeNetRequest_rule_untitled": {
+		"message": "Κανόνας $1"
+	},
+	"declarativeNetRequest_folder_untitled": {
+		"message": "(χωρίς τίτλο)"
+	},
+	"declarativeNetRequest_folder_in_account": {
+		"message": "$1 (στον λογαριασμό)"
+	},
+	"declarativeNetRequest_folder_device_only": {
+		"message": "$1 (μόνο σε αυτή τη συσκευή)"
+	},
+	"declarativeNetRequest_notify_unsupported": {
+		"message": "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει ειδοποιήσεις — οι κανόνες που εφαρμόστηκαν δεν μπορούν να ανακοινωθούν."
+	},
+	"declarativeNetRequest_notify_feedback_unavailable": {
+		"message": "Αυτό το πρόγραμμα περιήγησης δεν παρέχει συμβάν για κανόνες που εφαρμόστηκαν (το Chrome το παρέχει μόνο σε μη πακεταρισμένες επεκτάσεις) — χωρίς αυτό μπορούν να ανακοινώνονται μόνο κανόνες που αποκλείουν αιτήματα ή τα ανακατευθύνουν σε HTTPS."
+	},
+	"declarativeNetRequest_notify_granted": {
+		"message": "Οι κανόνες που εφαρμόζονται θα ανακοινώνονται αθόρυβα."
+	},
+	"declarativeNetRequest_notify_blocked": {
+		"message": "Το πρόγραμμα περιήγησης αποκλείει τις ειδοποιήσεις της επέκτασης — επιτρέψτε τες στις ρυθμίσεις του προγράμματος περιήγησης."
+	},
+	"declarativeNetRequest_notify_ask": {
+		"message": "Οι ειδοποιήσεις και η παρακολούθηση των κανόνων που εφαρμόζονται απαιτούν άδεια του προγράμματος περιήγησης."
+	},
+	"declarativeNetRequest_notify_button": {
+		"message": "Να επιτρέπονται ειδοποιήσεις και παρακολούθηση"
+	},
+	"declarativeNetRequest_notify_button_title": {
+		"message": "Να επιτρέπονται τα notifications και declarativeNetRequestFeedback· οι ειδοποιήσεις είναι αθόρυβες"
+	},
+	"declarativeNetRequest_notify_title": {
+		"message": "Εφαρμόστηκε κανόνας declarativeNetRequest"
+	},
+	"declarativeNetRequest_notify_body_one": {
+		"message": "Ο κανόνας «$2» εφαρμόστηκε στο αίτημα $3."
+	},
+	"declarativeNetRequest_notify_body_other": {
+		"message": "Εφαρμόστηκαν $1 κανόνες· τελευταίος: «$2» στο αίτημα $3."
+	},
+	"declarativeNetRequest_notify_requests_granted": {
+		"message": "Τα αποκλεισμένα αιτήματα και τα αιτήματα που ανακατευθύνθηκαν σε HTTPS στα οποία στοχεύουν οι κανόνες με ειδοποίηση θα ανακοινώνονται αθόρυβα. Το πρόγραμμα περιήγησης δεν λέει ποιος κανόνας απέκλεισε ή ανακατεύθυνε ένα αίτημα — ανακοινώνεται και αίτημα που απέκλεισε ή ανακατεύθυνε άλλη μονάδα ή επέκταση (την ανακατεύθυνση και το ίδιο το πρόγραμμα περιήγησης, π.χ. HSTS)."
+	},
+	"declarativeNetRequest_notify_requests_ask": {
+		"message": "Οι ειδοποιήσεις και η παρακολούθηση των αποκλεισμένων και ανακατευθυνόμενων αιτημάτων απαιτούν άδεια του προγράμματος περιήγησης."
+	},
+	"declarativeNetRequest_notify_requests_button": {
+		"message": "Να επιτρέπονται ειδοποιήσεις και παρακολούθηση αιτημάτων"
+	},
+	"declarativeNetRequest_notify_requests_button_title": {
+		"message": "Να επιτρέπονται τα notifications και webRequest για όλες τις διευθύνσεις· οι ειδοποιήσεις είναι αθόρυβες"
+	},
+	"declarativeNetRequest_notify_requests_title": {
+		"message": "Αποκλείστηκε αίτημα — declarativeNetRequest"
+	},
+	"declarativeNetRequest_notify_requests_body_one": {
+		"message": "Το αίτημα $3 αποκλείστηκε· στοχεύει σε αυτό ο κανόνας «$2»."
+	},
+	"declarativeNetRequest_notify_requests_body_other": {
+		"message": "Αποκλείστηκαν $1 αιτήματα· τελευταίο: $3 (κανόνας «$2»)."
+	},
+	"declarativeNetRequest_notify_upgraded_title": {
+		"message": "Ανακατεύθυνση αιτήματος σε HTTPS — declarativeNetRequest"
+	},
+	"declarativeNetRequest_notify_upgraded_body_one": {
+		"message": "Το αίτημα $3 ανακατευθύνθηκε σε HTTPS· στοχεύει σε αυτό ο κανόνας «$2»."
+	},
+	"declarativeNetRequest_notify_upgraded_body_other": {
+		"message": "Ανακατευθύνθηκαν σε HTTPS $1 αιτήματα· τελευταίο: $3 (κανόνας «$2»)."
+	},
+	"declarativeNetRequest_log_feedback_unavailable": {
+		"message": "Αυτό το πρόγραμμα περιήγησης δεν παρέχει συμβάν για κανόνες που εφαρμόστηκαν (το Chrome το παρέχει μόνο σε μη πακεταρισμένες επεκτάσεις) — χωρίς αυτό μόνο κανόνες που αποκλείουν αιτήματα ή τα ανακατευθύνουν σε HTTPS μπορούν να γράφουν στο αρχείο συμβάντων."
+	},
+	"declarativeNetRequest_log_granted": {
+		"message": "Οι κανόνες που εφαρμόστηκαν γράφονται στο δικό του αρχείο συμβάντων — το εμφανίζει η επισκόπηση του Declarative Net Request Sandbox."
+	},
+	"declarativeNetRequest_log_requests_granted": {
+		"message": "Τα αποκλεισμένα αιτήματα και τα αιτήματα που ανακατευθύνθηκαν σε HTTPS στα οποία στοχεύουν οι κανόνες με αρχείο συμβάντων γράφονται σε αυτό — το εμφανίζει η επισκόπηση του Declarative Net Request Sandbox. Το πρόγραμμα περιήγησης δεν λέει ποιος κανόνας απέκλεισε ή ανακατεύθυνε ένα αίτημα — γράφεται και αίτημα που απέκλεισε ή ανακατεύθυνε άλλη μονάδα ή επέκταση (την ανακατεύθυνση και το ίδιο το πρόγραμμα περιήγησης, π.χ. HSTS)."
+	},
+	"declarativeNetRequest_log_ask": {
+		"message": "Το δικό αρχείο συμβάντων απαιτεί άδεια του προγράμματος περιήγησης για την παρακολούθηση των κανόνων που εφαρμόστηκαν."
+	},
+	"declarativeNetRequest_log_button": {
+		"message": "Να επιτρέπεται η παρακολούθηση κανόνων"
+	},
+	"declarativeNetRequest_log_button_title": {
+		"message": "Να επιτρέπεται το declarativeNetRequestFeedback"
+	},
+	"declarativeNetRequest_log_requests_ask": {
+		"message": "Το δικό αρχείο συμβάντων απαιτεί άδεια του προγράμματος περιήγησης για την παρακολούθηση των αποκλεισμένων και ανακατευθυνόμενων αιτημάτων."
+	},
+	"declarativeNetRequest_log_requests_button": {
+		"message": "Να επιτρέπεται η παρακολούθηση αιτημάτων"
+	},
+	"declarativeNetRequest_log_requests_button_title": {
+		"message": "Να επιτρέπεται το webRequest για όλες τις διευθύνσεις"
+	},
+	"declarativeNetRequest_missing_bookmarks": {
+		"message": "Οι κανόνες με φάκελο σελιδοδεικτών χρειάζονται πρόσβαση στους σελιδοδείκτες — χωρίς αυτήν δεν μπορεί να επιλεγεί φάκελος και οι κανόνες με φάκελο δεν ισχύουν."
+	},
+	"declarativeNetRequest_allow_bookmarks": {
+		"message": "Επιτρέψτε την πρόσβαση στους σελιδοδείκτες"
+	},
+	"declarativeNetRequest_service_invalid_rules": {
+		"message": "Οι κανόνες δεν μπορούν να αποθηκευτούν: το πολύ $1 κανόνες και $2 kB."
+	},
+	"declarativeNetRequest_service_unknown_rule": {
+		"message": "Δεν υπάρχει κανόνας «$1» — ίσως αφαιρέθηκε στο μεταξύ."
+	},
+	"declarativeNetRequest_service_invalid_domain": {
+		"message": "Το «$1» δεν είναι τομέας για τον οποίο μπορεί να ανασταλεί ένας κανόνας."
+	},
+	"declarativeNetRequest_service_unknown_folder": {
+		"message": "Το «$1» δεν είναι id φακέλου σελιδοδεικτών."
+	},
+	"declarativeNetRequest_service_unknown_log_entry": {
+		"message": "Δεν υπάρχει καταχώριση «$1» στο αρχείο συμβάντων."
+	},
+	"declarativeNetRequest_service_reload_refused": {
+		"message": "Μπορεί να επαναφορτωθεί μόνο η σελίδα της ενεργής καρτέλας αυτού του παραθύρου."
+	},
+	"declarativeNetRequest_service_block_refused": {
+		"message": "Μπορεί να αποκλειστεί μόνο η σελίδα της ενεργής καρτέλας αυτού του παραθύρου, με τη διεύθυνση που έχει τώρα."
+	},
+	"declarativeNetRequest_service_except_refused": {
+		"message": "Στις εξαιρέσεις ενός κανόνα μπορεί να προστεθεί μόνο ο τομέας της σελίδας της ενεργής καρτέλας αυτού του παραθύρου, με τη διεύθυνση που έχει τώρα."
+	}
+}

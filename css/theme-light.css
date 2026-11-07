@@ -1,0 +1,25 @@
+/* Light look — the default colors of all extension pages. It is on the pages
+   twice: as a persistent style (default variables, always applies) and as an
+   alternate style with the title "Světlý" (Light) (the choice that the styleSwitch module
+   toggles between it and the dark look). The dark look (theme-dark.css) only
+   overrides the same variables.
+
+   The mvp.css variables (--color-bg, --color-link, ...) already have light values
+   in mvp.css, here are only the colors of the extension pages, which used to be hard-coded
+   in the CSS of the individual pages. */
+:root {
+	color-scheme: light;
+	--color-text: #202124;
+	--color-panel: #f5f5f5;
+	--color-border: #e0e0e0;
+	--color-input-border: #ccc;
+	--color-input-bg: #fff;
+	--color-text-muted: #666;
+	--color-text-label: #555;
+	--color-disabled-bg: #eee;
+	--color-button-secondary: #e8e8e8;
+	--color-button-secondary-hover: #d9d9d9;
+	--color-button-secondary-text: #333;
+	--color-error: red;
+	--color-success: green;
+}

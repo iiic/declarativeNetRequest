@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title data-i18n="onboarding_page_title">Declarative Net Request - welcome page (onboarding)</title>
+	<link rel="stylesheet" href="./css/mvp.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/theme-light.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/onboarding.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/module-frame.css" crossorigin="anonymous">
+	<link rel="alternate stylesheet" href="./css/theme-light.css" title="Světlý" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/theme-dark.css" title="Tmavý" media="(prefers-color-scheme: dark)" crossorigin="anonymous">
+</head>
+
+<body>
+	<header>
+		<div class="onboarding-language">
+			<label><span data-i18n="core_ui_language">Language</span>
+				<select id="ui-language"></select>
+			</label>
+		</div>
+	</header>
+
+	<main>
+
+		<section id="modules-output"></section>
+
+		<section>
+			<p>Welcome to <strong>Declarative Net Request</strong> - a powerful Firefox extension that gives you control over your web browsing. This extension lets you modify HTTP requests, block unwanted content, remove tracking parameters, and force HTTPS connections, all based on rules you define.</p>
+		</section>
+		<hr>
+		<div id="figure">
+			<header>
+				<h1>declarativeNetRequest</h1>
+			</header>
+			<figure>
+				<img alt="Snapshot of extension" src="./img/snapshot.png" style="display: none;">
+				<figcaption>Take control of your web requests with customizable rules</figcaption>
+			</figure>
+		</div>
+		<p id="onboarding-empty" class="onboarding-empty" hidden data-i18n-html="onboarding_empty_html">
+			Thank you for using this extension. Take a look at the <a href="./options.html" target="_blank">extension settings</a>, where you can adjust more options than just the language.
+		</p>
+		<article id="docs">
+			<h2>Getting Started</h2>
+			<h3>Step 1: Enable Request Modification</h3>
+			<p><strong>This is required for the extension to work.</strong> After installation, you must grant permission for the extension to modify web requests:</p>
+			<ol>
+				<li>Click the extension icon in your Firefox toolbar</li>
+				<li>Click <strong>Settings</strong> (or go to <code>about:addons</code> &rarr; declarativeNetRequest &rarr; Preferences)</li>
+				<li>Click <strong>"Allow request modification"</strong></li>
+			</ol>
+			<p><em>Note:</em> The toolbar popup will show a reminder if this permission is not yet granted. Rules will not apply until you complete this step.</p>
+			<h3>Step 2: Understand the Default Rules</h3>
+			<p>The extension comes with pre-configured rules that are already active. These include:</p>
+			<ul>
+				<li><strong>Privacy Protection:</strong> Removes common tracking parameters from URLs (such as <code>utm_source</code>, <code>utm_medium</code>, <code>gclid</code>, <code>fbclid</code>, and many others)</li>
+				<li><strong>Security:</strong> Blocks connections to known dangerous CDN servers</li>
+				<li><strong>Privacy Headers:</strong> Adds headers that tell websites not to track you</li>
+			</ul>
+			<p>These rules work immediately once you enable request modification. You can review, edit, or disable them in Settings.</p>
+			<h3>Step 3: Manage Rules for the Current Page</h3>
+			<p>While browsing, you can quickly manage rules for the page you are on:</p>
+			<ul>
+				<li><strong>View active rules:</strong> Click the extension icon to see which rules are targeting the current page</li>
+				<li><strong>Suspend a rule:</strong> Temporarily disable a rule for 1 hour (either globally or just for the current domain)</li>
+				<li><strong>Add exceptions:</strong> Add the current domain to a rule's Except list to prevent it from applying</li>
+				<li><strong>Block content:</strong> Block the current domain or specific page address with one click</li>
+				<li><strong>View event log:</strong> See which requests have been blocked or redirected to HTTPS</li>
+			</ul>
+			<h2>Understanding How Rules Work</h2>
+			<p>Each rule in Declarative Net Request has three main components:</p>
+			<h3>1. What to Do (Actions)</h3>
+			<p>Define what happens when a request matches your rule:</p>
+			<ul>
+				<li><strong>Modify request headers:</strong> Change headers sent to the server (e.g., add <code>DNT: 1</code> for Do Not Track)</li>
+				<li><strong>Modify response headers:</strong> Change headers received from the server</li>
+				<li><strong>Remove GET parameters:</strong> Strip tracking or unwanted parameters from URLs</li>
+				<li><strong>Set GET parameters:</strong> Add or override URL parameters</li>
+				<li><strong>Block requests:</strong> Prevent specific requests from loading (ads, trackers, etc.)</li>
+				<li><strong>Redirect to HTTPS:</strong> Automatically change HTTP to HTTPS for more secure connections</li>
+			</ul>
+			<h3>2. Where to Apply It (Targets)</h3>
+			<p>Specify which websites and URLs the rule should affect:</p>
+			<ul>
+				<li><strong>Domains:</strong> Apply to specific websites (e.g., <code>example.com</code>, <code>*.google.com</code>)</li>
+				<li><strong>URL patterns:</strong> Match specific paths using wildcards (e.g., <code>*.example.com/track*</code>)</li>
+				<li><strong>Bookmark folders:</strong> Apply rules to all bookmarks in a specific folder</li>
+				<li><strong>Except domains:</strong> Exclude certain domains from the rule</li>
+			</ul>
+			<h3>3. Which Requests to Affect (Resource Types)</h3>
+			<p>Choose which types of resources the rule applies to:</p>
+			<ul>
+				<li>Main page (main_frame)</li>
+				<li>Scripts</li>
+				<li>Stylesheets</li>
+				<li>Images</li>
+				<li>Fonts</li>
+				<li>Media (video/audio)</li>
+				<li>Fetch/XHR requests</li>
+				<li>WebSockets</li>
+				<li>Frames</li>
+				<li>Others</li>
+			</ul>
+			<h2>User Interface Overview</h2>
+			<h3>Toolbar Popup</h3>
+			<p>Click the extension icon in your Firefox toolbar to quickly:</p>
+			<ul>
+				<li>See all rules active on the current page</li>
+				<li>Suspend rules temporarily (1 hour)</li>
+				<li>Add the current domain to a rule's exceptions</li>
+				<li>Block the current domain or page address</li>
+				<li>View the event log of blocked requests</li>
+				<li>Access Settings</li>
+			</ul>
+			<h3>Sidebar</h3>
+			<p>For a more spacious view, open the sidebar:</p>
+			<ul>
+				<li>Go to Firefox menu &rarr; View &rarr; Sidebar &rarr; declarativeNetRequest</li>
+				<li>Or right-click the extension icon and select Show in Sidebar</li>
+			</ul>
+			<p>The sidebar shows the same information as the popup but with more room for details.</p>
+			<h3>Settings Page</h3>
+			<p>Access comprehensive settings at <code>about:addons</code> &rarr; declarativeNetRequest &rarr; Preferences, or click Settings in the popup. Here you can:</p>
+			<ul>
+				<li>Enable or disable request modification (required for rules to work)</li>
+				<li>View, add, edit, and delete rules</li>
+				<li>Enable or disable individual default rules</li>
+				<li>Import and export your rule configurations</li>
+				<li>Adjust extension behavior and preferences</li>
+				<li>Grant additional permissions as needed</li>
+			</ul>
+			<h2>Common Use Cases</h2>
+			<h3>Block Tracking Across the Web</h3>
+			<p>Create rules to remove common tracking parameters from all websites. The default rules already handle the most common ones, but you can add more specific parameters used by particular services.</p>
+			<h3>Block Specific Trackers or Ads</h3>
+			<p>Create rules to block entire domains that serve ads or tracking scripts. This can significantly improve page load times and protect your privacy.</p>
+			<h3>Force HTTPS Everywhere</h3>
+			<p>Create redirect rules to automatically change HTTP connections to HTTPS for specific domains or across all websites.</p>
+			<h3>Add Privacy Headers</h3>
+			<p>Add headers like <code>DNT: 1</code> (Do Not Track) or <code>Sec-GPC: 1</code> (Global Privacy Control) to all your requests to signal your privacy preferences to websites.</p>
+			<h3>Modify Requests for Specific Sites</h3>
+			<p>Create rules that only apply to specific websites. For example, you might want to remove a specific tracking parameter that one site adds, or modify headers only for your bank website.</p>
+			<h2>Privacy and Security</h2>
+			<p><strong>Your data stays on your device.</strong> This extension does not send any information off your computer. All your rules, settings, and browsing data remain local to your browser.</p>
+			<p>The extension uses Firefox built-in <code>declarativeNetRequest</code> API, which means:</p>
+			<ul>
+				<li>Rules are applied efficiently by the browser itself, without a separate request listener</li>
+				<li>There is minimal performance impact on your browsing</li>
+				<li>Rules work even when the extension is not actively running</li>
+			</ul>
+			<p>Note: Firefox does not report which specific rule was applied to each request. The extension event log and notifications therefore only cover blocked requests and HTTPS redirects.</p>
+			<h2>More Information</h2>
+			<h3>Default Rules</h3>
+			<p>The extension includes two types of default rules:</p>
+			<ul>
+				<li><strong>Enabled by default:</strong> Rules that are active immediately after enabling request modification. These include privacy protections and security features that are safe for most users.</li>
+				<li><strong>Ready to enable:</strong> Additional rules that you can activate with one click in Settings. Review these before enabling, as they may affect how some websites work.</li>
+			</ul>
+			<p><strong>Important:</strong> Some rules can affect website functionality. If a site is not working properly, check if a rule is blocking or modifying something it needs. You can always suspend rules temporarily or add exceptions for specific domains.</p>
+			<h3>Creating Your Own Rules</h3>
+			<p>While the default rules cover many common use cases, you can create custom rules in Settings:</p>
+			<ol>
+				<li>Go to Settings &rarr; Add new rule</li>
+				<li>Define what action to take (block, modify, redirect)</li>
+				<li>Specify where to apply it (domains, URL patterns)</li>
+				<li>Choose which resource types to affect</li>
+				<li>Add any exceptions if needed</li>
+			</ol>
+			<h3 id="individual">Tips for Effective Rule Management</h3>
+			<p>Start with the default rules and adjust as needed:</p>
+			<ul>
+				<li><strong>Test rules one at a time:</strong> Enable a new rule and test if it works as expected before adding more</li>
+				<li><strong>Use exceptions:</strong> If a rule breaks a website you need, add that domain to the rule exceptions rather than disabling the rule entirely</li>
+				<li><strong>Temporary suspensions:</strong> Use the suspend for 1 hour feature to quickly test if a rule is causing an issue</li>
+				<li><strong>Check the event log:</strong> The event log in the popup/sidebar shows which requests were blocked or redirected</li>
+				<li><strong>Import/export:</strong> Backup your rules configuration using the Import/Export feature in Settings</li>
+			</ul>
+			<h3 id="advanced">Advanced Features</h3>
+			<p>For power users:</p>
+			<ul>
+				<li><strong>Bookmark folder rules:</strong> Create rules that only apply to websites in specific bookmark folders</li>
+				<li><strong>URL patterns with wildcards:</strong> Use <code>*</code> as a wildcard to match multiple URLs (e.g., <code>*.example.com/*track*</code>)</li>
+				<li><strong>Multiple actions per rule:</strong> Combine multiple modifications in a single rule</li>
+				<li><strong>Regular expressions:</strong> Use regex patterns for more complex matching (where supported)</li>
+			</ul>
+			<p>Explore these features in Settings to create sophisticated rule configurations tailored to your needs.</p>
+			<h2>Everyday Use: A Practical Guide</h2>
+			<h3>Check What Applies to a Page</h3>
+			<p>Open the extension popup while viewing a website. It lists the rules that target that page and shows whether a rule is active or temporarily suspended. If no rules are listed, the page may simply have no matching rules. Browser-internal pages, such as extension settings, are not ordinary web pages and cannot be modified by these rules.</p>
+			<h3>Test a Rule Before Keeping a Change</h3>
+			<ol>
+				<li>In the popup, suspend a suspected rule for one hour, either everywhere or only for the current domain.</li>
+				<li>Reload the page and check whether the problem is gone. Rules affect new requests; they do not undo requests that have already loaded.</li>
+				<li>If the rule caused the problem, add the domain to that rule's <strong>Except</strong> list to keep the rule active on other websites, or edit the rule in Settings.</li>
+			</ol>
+			<p>A temporary suspension ends automatically after one hour. An exception is permanent until you remove it in the rule editor.</p>
+			<h3>Choose the Right Scope</h3>
+			<p>A domain target covers requests to that domain and its subdomains, as well as files loaded by its pages from other domains. An address target is narrower: it affects requests to the matching page or file, but does not cover other files that page loads from elsewhere. Use a domain when you mean a whole site; use an address when you mean one specific page or file.</p>
+			<p>The popup's block actions have different effects too. <strong>Block domain</strong> blocks requests to the domain and its subdomains across websites. <strong>Block this address</strong> blocks only the exact page address. Both actions add an entry to a rule in Settings, where you can later change or remove it.</p>
+			<h3>Know What the Defaults Send</h3>
+			<p>Along with removing tracking parameters and blocking a list of dangerous CDN domains, the enabled defaults remove a few Facebook parameters and send two request headers: <code>Sec-GPC: 1</code> (a Global Privacy Control signal) and <code>Cookie-Preference: functional</code>. These headers express preferences, but they are uncommon and may make your browser easier to identify. Review or disable them in Settings if you do not want to send them. The HTTP-to-HTTPS rule is available but starts disabled.</p>
+			<h3>Understand the Event Log</h3>
+			<p>The event log is not a full browsing history or a complete list of every rule match. In Firefox, it can show blocked requests and requests redirected to HTTPS; Firefox does not report every applied rule. A rule must also be set to write events to the log, and the required browser permission must be granted. Use the rule overview to see which rules target the current page.</p>
+		</article>
+		<hr>
+		<p>Thank you for using Declarative Net Request. By taking control of your web requests, you are taking an important step toward better privacy, security, and browsing experience.</p>
+		<p>For questions, issues, or to learn more, visit the extension page on <a href="https://addons.mozilla.org" target="_blank">Firefox Add-ons</a>.</p>
+	</main>
+	<footer>
+		<hr>
+		<p>Created by <a href="https://iiic.dev/#declarativeNetRequest" target="_blank">ic</a><br></p>
+		<p>uses Atlas icons font <a href="https://github.com/Vectopus/Atlas-icons-font">https://github.com/Vectopus/Atlas-icons-font</a> for the extension icon</p>
+		<p>and mvp.css <a href="https://github.com/andybrewer/mvp">https://github.com/andybrewer/mvp</a> for the extension UI styling</p>
+	</footer>
+	<script type="module" src="./onboarding.mjs" crossorigin="anonymous"></script>
+</body>
+
+</html>

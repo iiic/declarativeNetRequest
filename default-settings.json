@@ -1,0 +1,8 @@
+{
+	"declarativeNetRequest.displayLocation": "none",
+	"declarativeNetRequestSandbox.displayLocation": [
+		"popup",
+		"sidebar"
+	],
+	"onboardingModule.displayLocation": "none"
+}
